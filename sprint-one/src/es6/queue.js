@@ -4,11 +4,11 @@ class Queue {
   }
 
   enqueue(value) {
-    return this[++this.i] = value;
+    return this[this.i++] = value;
   }
 
   dequeue() {
-    var returnVal = this[1];
+    var returnVal = this[0];
     delete this[1];
     for (var key in this) {
       this[key - 1] = this[key];

@@ -4,11 +4,11 @@ var Queue = function() {
   var i = 0;
 
   someInstance.enqueue = function(value) {
-    storage[++i] = value;
+    storage[i++] = value;
   };
 
   someInstance.dequeue = function() {
-    var returnVal = storage[1];
+    var returnVal = storage[0];
     delete returnVal;
     for (var key in storage) {
       storage[key - 1] = storage[key];

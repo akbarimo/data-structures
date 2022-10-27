@@ -4,11 +4,11 @@ class Stack {
   }
 
   push(value) {
-    return this[++this.i] = value;
+    return this[this.i++] = value;
   }
 
   pop() {
-    var returnVal = this[this.i];
+    var returnVal = this[this.i - 1];
     delete this[this.i];
     this.i--;
     return returnVal;

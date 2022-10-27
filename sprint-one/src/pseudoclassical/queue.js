@@ -3,11 +3,11 @@ var Queue = function() {
 };
 
 Queue.prototype.enqueue = function (value) {
-  return this[++this.i] = value;
+  return this[this.i++] = value;
 };
 
 Queue.prototype.dequeue = function () {
-  var returnVal = this[1];
+  var returnVal = this[0];
   delete returnVal;
   for (var key in this) {
     this[key - 1] = this[key];

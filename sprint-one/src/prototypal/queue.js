@@ -6,10 +6,10 @@ var Queue = function() {
 var queueMethods = {
   i: 0,
   enqueue: function (value) {
-    return this[++this.i] = value;
+    return this[this.i++] = value;
   },
   dequeue: function () {
-    var returnVal = this[1];
+    var returnVal = this[0];
     delete returnVal;
     for (var key in this) {
       this[key - 1] = this[key];

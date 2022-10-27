@@ -8,11 +8,11 @@ var stackMethods = {};
 stackMethods.i = 0;
 
 stackMethods.push = function (value) {
-  return this[++this.i] = value;
+  return this[this.i++] = value;
 };
 
 stackMethods.pop = function () {
-  var returnVal = this[this.i];
+  var returnVal = this[this.i - 1];
   delete returnVal;
   this.i--;
   return returnVal;

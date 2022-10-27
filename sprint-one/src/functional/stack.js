@@ -4,11 +4,11 @@ var Stack = function() {
   var i = 0;
 
   someInstance.push = function(value) {
-    storage[++i] = value;
+    storage[i++] = value;
   };
 
   someInstance.pop = function() {
-    var returnVal = storage[i];
+    var returnVal = storage[i - 1];
     delete returnVal;
     i--;
     return returnVal;

@@ -7,10 +7,10 @@ var Stack = function() {
 var stackMethods = {
   i: 0,
   push: function (value) {
-    return this[++this.i] = value;
+    return this[this.i++] = value;
   },
   pop: function () {
-    var returnVal = this[this.i];
+    var returnVal = this[this.i - 1];
     delete returnVal;
     this.i--;
     return returnVal;
