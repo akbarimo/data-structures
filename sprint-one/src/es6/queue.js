@@ -8,13 +8,13 @@ class Queue {
   }
 
   dequeue() {
-    var returnVal = this[0];
-    delete this[1];
-    for (var key in this) {
+    const removed = this[0];
+    delete this[0];
+    for (const key in this) {
       this[key - 1] = this[key];
     }
     this.i--;
-    return returnVal;
+    return removed;
   }
 
   size() {

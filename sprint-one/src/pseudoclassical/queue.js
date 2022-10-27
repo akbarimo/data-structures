@@ -1,4 +1,4 @@
-var Queue = function() {
+const Queue = function() {
   this.i = 0;
 };
 
@@ -7,13 +7,13 @@ Queue.prototype.enqueue = function (value) {
 };
 
 Queue.prototype.dequeue = function () {
-  var returnVal = this[0];
-  delete returnVal;
-  for (var key in this) {
+  const removed = this[0];
+  delete removed;
+  for (const key in this) {
     this[key - 1] = this[key];
   }
   this.i--;
-  return returnVal;
+  return removed;
 };
 
 Queue.prototype.size = function() {

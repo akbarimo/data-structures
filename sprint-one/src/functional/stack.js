@@ -1,17 +1,17 @@
-var Stack = function() {
-  var someInstance = {};
-  var storage = {};
-  var i = 0;
+const Stack = function() {
+  const someInstance = {};
+  const storage = {};
+  let i = 0;
 
   someInstance.push = function(value) {
     storage[i++] = value;
   };
 
   someInstance.pop = function() {
-    var returnVal = storage[i - 1];
-    delete returnVal;
+    const removed = storage[i - 1];
+    delete removed;
     i--;
-    return returnVal;
+    return removed;
   };
 
   someInstance.size = function() {

@@ -1,9 +1,9 @@
-var Stack = function() {
-  var instance = Object.create(stackMethods);
+const Stack = function() {
+  let instance = Object.create(stackMethods);
   return instance;
 };
 
-var stackMethods = {};
+const stackMethods = {};
 
 stackMethods.i = 0;
 
@@ -12,10 +12,10 @@ stackMethods.push = function (value) {
 };
 
 stackMethods.pop = function () {
-  var returnVal = this[this.i - 1];
-  delete returnVal;
+  const removed = this[this.i - 1];
+  delete removed;
   this.i--;
-  return returnVal;
+  return removed;
 };
 
 stackMethods.size = function () {

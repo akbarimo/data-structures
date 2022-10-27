@@ -8,10 +8,10 @@ class Stack {
   }
 
   pop() {
-    var returnVal = this[this.i - 1];
+    const removed = this[this.i - 1];
     delete this[this.i];
     this.i--;
-    return returnVal;
+    return removed;
   }
 
   size() {

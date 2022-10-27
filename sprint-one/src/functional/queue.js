@@ -1,20 +1,20 @@
-var Queue = function() {
-  var someInstance = {};
-  var storage = {};
-  var i = 0;
+const Queue = function() {
+  const someInstance = {};
+  const storage = {};
+  let i = 0;
 
   someInstance.enqueue = function(value) {
     storage[i++] = value;
   };
 
   someInstance.dequeue = function() {
-    var returnVal = storage[0];
-    delete returnVal;
-    for (var key in storage) {
+    const removed = storage[0];
+    delete removed;
+    for (const key in storage) {
       storage[key - 1] = storage[key];
     }
     i--;
-    return returnVal;
+    return removed;
   };
 
   someInstance.size = function() {
