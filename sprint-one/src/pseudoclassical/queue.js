@@ -1,8 +1,6 @@
 var Queue = function() {
-  this;
+  this.i = 0;
 };
-
-Queue.prototype.i = 0;
 
 Queue.prototype.enqueue = function (value) {
   return this[++this.i] = value;

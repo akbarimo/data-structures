@@ -1,8 +1,6 @@
 var Stack = function() {
-  this;
+  this.i = 0;
 };
-
-Stack.prototype.i = 0;
 
 Stack.prototype.push = function (value) {
   return this[++this.i] = value;
