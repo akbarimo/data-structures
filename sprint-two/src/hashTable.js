@@ -6,22 +6,21 @@ var HashTable = function() {
 HashTable.prototype.insert = function(k, v) {
   var index = getIndexBelowMaxForKey(k, this._limit);
   var bucket = this._storage.get(index);
-  var test = false;
+  var included = false;
   if (Array.isArray(bucket)) {
     bucket.forEach(function (item, i, collection) {
       if (item.includes(k)) {
         collection[i] = [k, v];
-        return test = true;
+        return included = true;
       }
     });
-    if (test === false) {
+    if (included === false) {
       bucket.push([k, v]);
     }
   } else {
     bucket = [[k, v]];
   }
   this._storage.each(function (item, i, collection) {
-    console.log(collection);
   });
   this._storage.set(index, bucket);
 };
