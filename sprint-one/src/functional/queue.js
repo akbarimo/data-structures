@@ -23,3 +23,5 @@ const Queue = function() {
 
   return someInstance;
 };
+
+// we want to utilize a start and end property

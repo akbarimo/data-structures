@@ -54,8 +54,7 @@ BinarySearchTree.prototype.contains = function(value) {
   return isFound;
 };
 
-// depthFirstLog function
-BinarySearchTree.prototype.depthFirstLog = function(cb, currentNode) {
+BinarySearchTree.prototype.depthFirstLog = function(cb) {
   const iterateTree = function(currentNode) {
     cb(currentNode.value);
     if (currentNode.left === null && currentNode.right === null) {
