@@ -1,5 +1,4 @@
-var BinarySearchTree = function(value) {
-
+var BinarySearchTree = function (value) {
   const someInstance = Object.create(BinarySearchTree.prototype);
 
   someInstance.value = value;
@@ -9,8 +8,7 @@ var BinarySearchTree = function(value) {
   return someInstance;
 };
 
-BinarySearchTree.prototype.insert = function(value) {
-
+BinarySearchTree.prototype.insert = function (value) {
   const treeSearch = function (currentNode) {
     if (currentNode.value > value) {
       if (currentNode.left === null) {
@@ -31,13 +29,12 @@ BinarySearchTree.prototype.insert = function(value) {
   treeSearch(this);
 };
 
-BinarySearchTree.prototype.contains = function(value) {
-
+BinarySearchTree.prototype.contains = function (value) {
   let isFound = false;
 
-  const searchTree = function(currentNode) {
+  const searchTree = function (currentNode) {
     if (currentNode.value === value) {
-      return isFound = true;
+      return (isFound = true);
     }
     if (currentNode.value < value) {
       if (currentNode.right !== null) {
@@ -54,8 +51,8 @@ BinarySearchTree.prototype.contains = function(value) {
   return isFound;
 };
 
-BinarySearchTree.prototype.depthFirstLog = function(cb) {
-  const iterateTree = function(currentNode) {
+BinarySearchTree.prototype.depthFirstLog = function (cb) {
+  const iterateTree = function (currentNode) {
     cb(currentNode.value);
     if (currentNode.left === null && currentNode.right === null) {
       return;
@@ -68,11 +65,4 @@ BinarySearchTree.prototype.depthFirstLog = function(cb) {
     }
   };
   iterateTree(this);
-
 };
-
-
-
-/*
- * Complexity: What is the time complexity of the above functions?
- */
